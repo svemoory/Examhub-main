@@ -24,6 +24,12 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install express
+          npm install ejs
+          npm install mongoose
+          npm install passport
+          npm install 
+         
+
         #  npm run build --if-present
         #  npm run test --if-present
 
@@ -37,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -48,9 +54,9 @@ jobs:
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'examhubdev'
-          slot-name: 'Production'
+          slot-name: 'production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_383AC200A4AC4F0C9C78BBE2EB63BA00 }}
           package: .
