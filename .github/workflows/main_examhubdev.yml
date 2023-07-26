@@ -27,7 +27,6 @@ jobs:
           npm install ejs
           npm install mongoose
           npm install passport
-          npm install 
          
 
         #  npm run build --if-present
