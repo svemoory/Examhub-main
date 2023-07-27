@@ -23,10 +23,10 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install express
-          npm install ejs
-          npm install mongoose
-          npm install passport
+        #  npm install express
+        #  npm install ejs
+        # npm install mongoose
+        #  npm install passport
          
 
         #  npm run build --if-present
