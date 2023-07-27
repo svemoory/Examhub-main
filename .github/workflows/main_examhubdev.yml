@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm install express
+          npm install ejs
+          npm install mongoose
+
           # npm run build --if-present
           # npm run test --if-present
 
