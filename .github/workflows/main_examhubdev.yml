@@ -14,23 +14,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
 
-      - name: npm install, build, and test
+      - name: Install dependencies
         run: |
           npm install express
-          npm install ejs
-          npm install mongoose
-          npm install passport
-         
-
-        #  npm run build --if-present
-        #  npm run test --if-present
+          # npm run build --if-present
+          # npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -51,11 +47,11 @@ jobs:
         with:
           name: node-app
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'examhubdev'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_383AC200A4AC4F0C9C78BBE2EB63BA00 }}
+          publish-profile: "${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_383AC200A4AC4F0C9C78BBE2EB63BA00 }}"
           package: .
