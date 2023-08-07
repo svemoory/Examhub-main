@@ -34,7 +34,7 @@ mongoose.connect(
 );
 var conn = mongoose.connection;
 conn.on("connected", function () {
-  console.log("database is connected successfully");
+  console.log("database is connected successfully -SV");
 });
 conn.on("disconnected", function () {
   console.log("database is disconnected successfully");
