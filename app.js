@@ -28,9 +28,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect(
-  "mongodb+srv://examHub:" +
+  "mongodb+srv://examhub45:" +
     process.env.MONGO_ATLAS_PWD +
-    "@examhub.mwatb2a.mongodb.net/?retryWrites=true&w=majority"
+    "@cluster0.lqpvisw.mongodb.net/?retryWrites=true&w=majority"
 );
 var conn = mongoose.connection;
 conn.on("connected", function () {
