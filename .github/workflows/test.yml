@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'examhubqa'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1094B610E2F46F2A2ADF1F126338191 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FFA1D9ABBF6D47FDA95A4470420D7E13 }}
           package: .
